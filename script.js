@@ -1,60 +1,70 @@
-// Exercícios de fundamentos
+//Variáveis e tipos de dados: Escreva um programa que declare duas variáveis, “nome” e “idade”, e as imprima em um console em uma frase que diga “Olá, meu nome é [nome] e eu tenho [idade] anos”.
 
-//Exercício 1: Olá, Mundo!
-// Crie um script que imprima "Olá, mundo!" no console
+let nome = "Guilherme"
+let idade = 21
 
-console.log("Olá, Mundo!")
+console.log(`Olá, meu nome é ${nome} e eu tenho ${idade} anos.`)
 
-// Exercício 2: Conversão de tipos
-// Dado o valor de uma string "1234", converta-o em um número e exiba o tipo da variável no console.
+//Operadores: Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração, multiplicação e divisão desses números.
 
-const valueString = "1234"
-let valueNumber = Number(valueString)
+let num1 = prompt("Digite o primeiro número:")
+let num2 = prompt("Digite o segundo número:")
 
-console.log(typeof valueNumber)
+num1 = Number(num1)
+num2 = Number(num2)
 
-// Exercício 3: Manipulação de strings
-// Dado uma string "JavaScript é incrível", escreva um código que conte quantos caracteres a string tem e quantas palavras existem na frase.
+console.log(`A soma é: ${num1 + num2}`)
+console.log(`A Subtração é: ${num1 - num2}`)
+console.log(`A multiplicação é: ${num1 * num2}`)
+console.log(`A divisão é: ${num1 / num2}`)
 
-const incrivelJS = "JavaScript é incrível"
-const qtdCaracteres = incrivelJS.length
-const qtdPalavras = incrivelJS.split(' ').length
+//Condições: Escreva um programa que pergunte ao usuário sua idade e imprima se ele é maior ou menor de idade.
 
-console.log(`Qtd de caracteres: ${qtdCaracteres}`)
-console.log(`Qtd de palavras: ${qtdPalavras}`)
+let idadeM = prompt("Qual sua idade?")
+idadeM = Number(idadeM)
 
-// Exercício 4: Loops e Arrays
-// Crie um array com cinco nomes. Use um loop for para imprimir cada nome no console.
-
-const myArray = ["João", "Matheus", "César", "Junior", "Gui"]
-
-for(let i=0; i < myArray.length; i++){
-    console.log(myArray[i])
+if (idadeM >= 18) {
+ console.log("Maior de idade")
+} else {
+ console.log("Menor de idade")
 }
 
-// Exercício 5: Funções, Strings e Math
-// Crie uma função que aceita uma string representando um horário no formato de 24 horas (por exemplo, "14:30"). A função deve retornar uma string que converta o horário para o formato de 12 horas (por exemplo, "2:30 PM"). Use o objeto Math para auxiliar nesta conversão. Certifique-se de que sua função lida corretamente com horários na meia-noite e no meio-dia.
 
-function convertHour(hour24) {
-    // Separar hora e minuto
-    const [hour, minute] = hour24.split(":")
+//Loops: Crie um loop que imprima todos os números de 1 a 100.
 
-    // Converter 24 horas para 12 horas - Fórmula= resto da divisão por 12 ou o valor 12 pois se o resto for 0 = falsy
-
-    const convertHour12 = hour % 12 || 12
-    const hour12 = `${convertHour12}:${minute}`
-
-    
-    // Periodo 
-    periodo = "AM"
-
-    if (hour > 12) {
-        periodo = "PM"
-    }
-
-    // Exibir
-    console.log(hour12, periodo)
-    
+for(let i = 0; i <= 100; i++){
+ console.log(i)
 }
 
-convertHour("16:16")
+//Funções: Escreva uma função que aceite dois números como argumentos e retorne sua soma.
+
+function soma(n1, n2){
+ console.log(n1 + n2)
+}
+
+soma(17, 17)
+
+//Arrays: Escreva um programa que declare um array de suas frutas favoritas e imprima cada fruta na lista usando um loop.
+
+const frutas = ["Maçã", "Laranja", "Abacate"]
+
+for(let i = 0; i <=2; i++){
+    console.log(frutas[i])
+}
+
+//Objetos: Crie um objeto que represente um livro, com propriedades para título, autor e número de páginas. Imprima cada propriedade no console.
+
+const livros = {
+    nome: "Harry Potter",
+    autor: "J.K Rowling"
+}
+
+console.log(livros.nome)
+console.log(livros.autor)
+
+//Eventos DOM: Crie uma página HTML com um botão que, quando clicado, exiba um alerta que diga “Você clicou no botão!”.
+
+function alertButton(){
+    alert("Você clicou no botão!")
+}
+
